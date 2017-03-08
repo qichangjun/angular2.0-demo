@@ -1,0 +1,133 @@
+<div class="main--wrapper">
+    <div class="editor--toolbar">
+        <div class="btn--box">
+            <button class="btn btn-default" (click)="saveData()">save</button>
+            <button [disabled]="!selectedItem || selectedItem.type=='startPoint'" class="btn btn-default" (click)="vm.copyItem()"><i class="fa fa-copy editor--icon"></i></button>
+            <button [disabled]="!copyItem" class="btn btn-default" (click)="vm.pasteItem()"><i class="fa fa-paste editor--icon"></i></button>
+        </div>
+    </div>
+    <div class="view--main--wrapper">
+        <div class="view--main--box">
+            <div class="left--content--wrapper">
+                <div class="left--content--box">
+                    <div class="all--modules--heading">
+                        <span class="title">所有标题</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </div>
+                    <div id="products" >
+                        <div class="template--element--heading">
+                            <span>模板元素</span>
+                        </div>
+                        <div id="catalog">
+                            <div *ngFor='let tool of list1' >
+                            <div                                        
+                                        *ngIf="tool.title"
+                                        dnd-draggable
+                                        [dragEnabled]="true"
+                                        [dragData]="tool"
+                                        (onDragStart)="startDragFromTool(tool)"                                                                                                                                  
+                                        class=" drag--item {{tool.toolClass}} pull-left"
+                                >
+                                    <span class="glyphicon {{tool.toolImg}}"></span>
+                                </div>
+                                <div class="full-left item--title" >
+                                    {{tool.title}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div id="cart" class="cart--area"
+                    
+            >
+                <div class="item--title">
+                    <span class="ui-widget-header">工作流</span>
+                </div>
+                <div class="ui-widget-content" >
+                    <div    class="canvas--range"
+                            dnd-droppable
+                            (onDropSuccess)="dropCallback($event)"
+                            style="position: relative;"
+                            >                            
+                        <svg  class="svg--position">
+                            <g *ngFor="let item of model.data">
+                                <g pointer-events="painted"
+                                   svgLine
+                                   *ngFor="let to of item.to"
+                                   (clickLine)="onClick($event)"
+                                   [svgLineClientWidth]="item.clientWidth"
+                                   [svgLineClientHeight]="item.clientHeight"
+                                   [svgToClientWidth]="to.clientWidth"
+                                   [svgToClientHeight]="to.clientHeight"
+                                   [svgLineFromId]="item.id"
+                                   [svgLineToId]="to.id"   
+                                   [svgLineId]="item.title+item.id+to.id"                                                                             
+                                   id="{{item.title}}{{item.id}}{{to.id}}"
+                                >
+                                    <marker  id="{{item.title}}{{item.id}}{{to.id}}marker" class="svgMarker" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="strokeWidth" markerWidth="6" markerHeight="6" orient="auto">
+                                        <path d="M 0 0 L 10 5 L 0 10 z"/>
+                                    </marker>
+                                    <path  id="{{item.title}}{{item.id}}{{to.id}}Path"  class="svgPath" d="" marker-end="" stroke="#818181"
+                                           stroke-width="2"></path>
+                                   
+                                </g>
+                            </g>
+
+                        </svg>
+                        <div  *ngFor="let item of model.data" class="{{item.connectClass}}">
+                            <div
+                                    *ngIf="item.title" 
+                                    dnd-draggable
+                                    [dragEnabled]="true"    
+                                    (onDragStart)="startDragFromContainer(item)"                                                                                                                 
+                                    class="{{item.class}} drag--item--style"                                                                       
+                                    [ngStyle]="{'left':item.left+'px','top':item.top+'px','position':'absolute'}"
+                                    (click)="clickItem($event,item);selectedItem = item"
+                            > 
+                             <span class="glyphicon {{item.itemImg}} drag--item--in--icon" 
+                                [ngStyle]="{'line-height':item.clientHeight+'px'}"
+                             ></span>
+                                <span class="drag--item--bottom--title"
+                                [ngStyle]="{'top':item.clientHeight+5+'px','width':item.clientWidth+'px'}"  
+                                *ngIf="item.type!=='判断'">{{item.title}}</span>                             
+                            </div>
+                            <span *ngIf="selectedItem === item" class="selected--in--item"
+                                  [ngStyle]="{'left':item.left+item.clientWidth + 8 + 'px' ,'top':item.top+item.clientHeight - 24 + 'px'}"
+                            >
+                                <span class="glyphicon glyphicon-cog" *ngIf="item.type != 'startPoint' && item.type != 'endPoint' && item.type != '判断' " (click)="editPoint($event,item)" dnd-nodrag></span>
+                                <span class="glyphicon glyphicon-resize-full"
+                                      *ngIf="item.type != 'endPoint'"
+                                      (click)="connectLine($event)"
+                                ></span>
+                                 <span class="glyphicon glyphicon-trash"  (click)="deleteItem($event,item)" ></span>
+                            </span>
+                            <div *ngFor="let to of item.to"
+                                 class="to--in--item"
+                                 svgText
+                                 [svgTextClientWidth] = "item.clientWidth"
+                                 [svgTextClientHeight] = "item.clientHeight"
+                                 [svgToClientHeight] = "to.clientHeight"
+                                 [svgToClientWidth] = "to.clientWidth"
+                                 [svgTextFromId] = "item.id"
+                                 [svgTextToId] = "to.id"
+                                 id="{{item.title}}{{item.id}}{{to.id}}Line"
+                                 (dblclick)="vm.editLineName(to)"
+                            >
+                                {{to.text}}
+                            </div>
+
+                        </div>
+                        <div  *ngIf="deleteTool.showTool" class="operation--tool"  [ngStyle]="{'left':deleteTool.left+'px','top':deleteTool.top+20+'px'}">
+                            <span class="glyphicon glyphicon-remove operation--tool__icon"  (click)="deleteConnect($event)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,412 @@
+.main--wrapper {
+  padding: 40px 0 0 0; }
+  .main--wrapper .editor--toolbar {
+    background-color: #e8edf1;
+    min-height: 60px;
+    border-bottom: 1px solid #a4acb9; }
+    .main--wrapper .editor--toolbar .btn--box {
+      margin: 12px 15px 0px 20px;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle; }
+      .main--wrapper .editor--toolbar .btn--box .btn {
+        font-size: 24px;
+        color: #FFFFFF;
+        border-color: transparent;
+        padding: 0px 6px 0px 6px;
+        box-shadow: none;
+        text-shadow: none;
+        text-align: center;
+        border: none;
+        margin: 0px 0px 0px 5px;
+        height: 36px;
+        min-width: 36px;
+        background-color: #36a7c4; }
+        .main--wrapper .editor--toolbar .btn--box .btn .editor--icon {
+          position: relative;
+          top: 1px;
+          display: inline-block;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1; }
+  .main--wrapper .view--main--wrapper {
+    padding: 0 15px;
+    width: 100%; }
+    .main--wrapper .view--main--wrapper .full-left {
+      float: left; }
+    .main--wrapper .view--main--wrapper .view--main--box {
+      margin-left: -15px;
+      margin-right: -15px;
+      position: absolute;
+      top: 100px;
+      left: 15px;
+      right: 15px;
+      bottom: 0px; }
+      .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper {
+        width: 300px;
+        padding-left: 0px;
+        padding-right: 0px;
+        z-index: 100;
+        height: 100%;
+        float: left; }
+        .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper .left--content--box {
+          border-right: 1pt solid #c7cacd;
+          overflow: auto;
+          height: 100%;
+          padding-top: 104px; }
+          .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper .left--content--box .all--modules--heading {
+            padding: 15px 20px 25px 20px;
+            font-size: 18px; }
+            .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper .left--content--box .all--modules--heading .title {
+              color: #4bafeb; }
+            .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper .left--content--box .all--modules--heading .fa {
+              color: #f3b689;
+              font-size: xx-large; }
+          .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper .left--content--box .template--element--heading {
+            padding: 15px 20px;
+            font-size: 16px;
+            color: #bebebe; }
+          .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper .left--content--box .drag--item {
+            margin: 0 0 10px 20px;
+            cursor: pointer; }
+          .main--wrapper .view--main--wrapper .view--main--box .left--content--wrapper .left--content--box .item--title {
+            margin-left: 15px;
+            line-height: 50px; }
+      .main--wrapper .view--main--wrapper .view--main--box .cart--area {
+        height: calc(100% - 263px);
+        width: calc(100% - 301px);
+        position: relative; }
+        .main--wrapper .view--main--wrapper .view--main--box .cart--area .item--title {
+          font-size: 20px;
+          padding: 55px 0 8px 8px;
+          margin-left: 5px;
+          border-bottom: 1px solid #c7cacd;
+          cursor: pointer; }
+        .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content {
+          height: 100%; }
+          .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .canvas--range {
+            height: 100%;
+            width: 100%; }
+            .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .canvas--range .svg--position {
+              position: absolute;
+              z-index: 4;
+              width: 100%;
+              height: 615px;
+              top: 0px;
+              left: 0px; }
+          .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .drag--item--style {
+            position: absolute;
+            z-index: 5;
+            outline: none; }
+            .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .drag--item--style .drag--item--in--icon {
+              font-size: 24px; }
+            .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .drag--item--style .drag--item--bottom--title {
+              position: absolute;
+              left: 0px;
+              text-align: left;
+              color: #333333; }
+          .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .selected--in--item {
+            position: absolute;
+            z-index: 10;
+            background-color: white;
+            opacity: 0.8; }
+          .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .to--in--item {
+            position: absolute;
+            z-index: 5;
+            background-color: white;
+            opacity: 0.8; }
+          .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .operation--tool {
+            position: absolute;
+            width: 0px;
+            z-index: 13; }
+            .main--wrapper .view--main--wrapper .view--main--box .cart--area .ui-widget-content .operation--tool__icon {
+              z-index: 9;
+              left: 45px;
+              color: red;
+              font-size: 15px; }
+      .main--wrapper .view--main--wrapper .view--main--box .modify--attribute--area {
+        height: 250px;
+        width: calc(100% - 301px);
+        background-color: #e8edf1; }
+        .main--wrapper .view--main--wrapper .view--main--box .modify--attribute--area .item--body--box {
+          height: 198px;
+          overflow-y: auto; }
+          .main--wrapper .view--main--wrapper .view--main--box .modify--attribute--area .item--body--box .property--row {
+            float: left;
+            width: 50%;
+            font-size: 13px;
+            overflow: hidden;
+            margin-bottom: 5px; }
+            .main--wrapper .view--main--wrapper .view--main--box .modify--attribute--area .item--body--box .property--row .property--name {
+              font-weight: bold;
+              width: 46%;
+              float: left;
+              margin: 2px 2%;
+              padding: 0;
+              min-height: 25px; }
+            .main--wrapper .view--main--wrapper .view--main--box .modify--attribute--area .item--body--box .property--row .property--value {
+              width: 46%;
+              float: left;
+              min-height: 25px; }
+
+/*# sourceMappingURL=../../../../maps/webComponents/jqueryDrag/css/jqueryDrag.css.map */
+body {
+  font-family: Arial, Verdana, Tahoma, "Hiragino Sans GB", Microsoft YaHei, SimSun, sans-serif;
+  font-size: 13px;
+  line-height: 1.42857;
+  color: #333; }
+
+.hs-body {
+  height: 100%; }
+
+[role="button"] {
+  outline: none; }
+
+.startItem {
+  height: 35px;
+  width: 35px;
+  border: 2px solid #99d070;
+  border-radius: 75px;
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  background-color: #ffffff; }
+
+.endItem {
+  height: 75px;
+  width: 75px;
+  border: 1px dotted;
+  border-radius: 75px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 75px;
+  position: absolute;
+  background-color: red; }
+
+.tool-dragItem {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  background-color: #e8edf1;
+  color: white; }
+  .tool-dragItem.startpoint--bg--color {
+    background-color: #dddddd; }
+  .tool-dragItem.endpoint--bg--color {
+    background-color: #53dafb; }
+  .tool-dragItem.dragpoint--bg--color {
+    background-color: #829ec0; }
+  .tool-dragItem.ifpoint--bg--color {
+    transform: rotate(45deg) scale(0.7);
+    background-color: #f9cd6a;
+    border-radius: 0; }
+
+.endpoint--before--box .connectModel:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  top: -6px;
+  left: -6px;
+  border: 2px dashed #99d070;
+  z-index: 10;
+  box-sizing: border-box;
+  -webkit-animation: clipAni 4s infinite linear; }
+
+.selectedModel:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -5px;
+  left: -5px;
+  border: 1px dotted #333;
+  z-index: 10;
+  box-sizing: border-box; }
+
+.selectedModel.start--item--selected:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  top: -6px;
+  left: -6px;
+  border: 2px dotted #cccccc;
+  z-index: 10;
+  box-sizing: border-box; }
+
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+
+.point1 {
+  width: 200px;
+  height: 100px;
+  background: red !important;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 15px; }
+
+.ifItem {
+  height: 50px;
+  width: 50px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #f9cd6a;
+  color: #ffffff;
+  position: absolute;
+  transform: rotate(45deg) scale(0.7); }
+
+.dragItem {
+  height: 50px;
+  width: 50px;
+  background-color: #829ec0;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  border-radius: 5px;
+  white-space: nowrap; }
+
+.connectModel {
+  position: relative; }
+
+.dragpoint--before--box .connectModel:before, .dragpoint--before--box .connectModel:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -5px;
+  left: -5px;
+  border: 2px dashed #99d070;
+  z-index: 10;
+  box-sizing: border-box;
+  -webkit-animation: clipAni 4s infinite linear; }
+
+.dragpoint--before--box .connectModel:before {
+  -webkit-animation-delay: -2s; }
+
+@keyframes clipAni {
+  0%, 100% {
+    clip: rect(0px, 120px, 120px, 110px); }
+  25% {
+    clip: rect(0px, 120px, 3px, 0px); }
+  50% {
+    clip: rect(0px, 3px, 120px, 0px); }
+  75% {
+    clip: rect(110px, 120px, 120px, 0px); } }
+
+.optionItem {
+  float: left; }
+
+.initDragItem {
+  height: 25px;
+  width: 100px;
+  border: 1px solid;
+  font-size: 15px;
+  text-align: center;
+  line-height: 25px;
+  padding-bottom: 1px; }
+
+.error-message {
+  color: red; }
+
+/***************************** Dropzone Styling *****************************/
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+.advancedDemo .dropzone ul[dnd-list] {
+  min-height: 42px;
+  margin: 0px;
+  padding-left: 0px; }
+
+.advancedDemo .dropzone li {
+  display: block; }
+
+/**
+ * Reduce opacity of elements during the drag operation. This allows the user
+ * to see where he is dropping his element, even if the element is huge. The
+ * .dndDragging class is automatically set during the drag operation.
+ */
+.advancedDemo .dropzone .dndDragging {
+  opacity: 0.7; }
+
+/**
+ * The dndDraggingSource class will be applied to the source element of a drag
+ * operation. It makes sense to hide it to give the user the feeling that he's
+ * actually moving it. Note that the source element has also .dndDragging class.
+ */
+.advancedDemo .dropzone .dndDraggingSource {
+  display: none; }
+
+/**
+ * An element with .dndPlaceholder class will be added as child of the dnd-list
+ * while the user is dragging over it.
+ */
+.thumbnail {
+  height: 280px !important; }
+
+.btn-droppable {
+  width: 180px;
+  height: 30px;
+  padding-left: 4px; }
+
+.btn-draggable {
+  width: 160px; }
+
+.emage {
+  height: 215px; }
+
+h1 {
+  padding: .2em;
+  margin: 0; }
+
+#products {
+  float: left;
+  margin-right: 2em; }
+
+#cart {
+  float: left;
+  margin-top: 1em; }
+
+#cart ol {
+  margin: 0;
+  padding: 1em 0 1em 3em; }
+
+.advancedDemo .dropzone .dndPlaceholder {
+  display: block;
+  min-height: 42px; }
+
+/***************************** Element type specific styles *****************************/
+.advancedDemo .dropzone .itemlist {
+  min-height: 120px !important; }
+
+.advancedDemo .dropzone .itemlist > li {
+  background-color: #337ab7;
+  border: none;
+  border-radius: .25em;
+  color: #fff;
+  float: left;
+  font-weight: 700;
+  height: 50px;
+  margin: 5px;
+  padding: 3px;
+  text-align: center;
+  width: 50px; }
+
+.advancedDemo .dropzone .container-element {
+  margin: 10px; }
+
+.selected {
+  color: red !important; }
+
+/*# sourceMappingURL=../../maps/css/main.css.map */

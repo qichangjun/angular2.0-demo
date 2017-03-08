@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav class="docs-component-viewer-sidenav mat-sidenav mat-sidenav-opened mat-sidenav-side" tabindex="-1">
+  <cdk-focus-trap class="mat-sidenav-focus-trap">
+    <div class="cdk-focus-trap-content">
+  <nav>
+        <h3>导航条</h3>
+        <ul>
+     <li>
+            <a 
+                routerLink="/detail-list" 
+                routerLinkActive="active"
+                >
+                详细信息
+            </a>
+          </li><li>
+            <a 
+              routerLink="/detail-users" 
+              routerLinkActive="active">
+              用户信息
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </cdk-focus-trap>
+</md-sidenav>
+
+<router-outlet></router-outlet>        
